@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import ToDo from './ToDo.js'
 
 function App() {
+
+  const allChecks = {
+    userID: 1,
+    id: 1,
+    title: "delicious aut autem",
+    completed: false,
+  };
+
+
+  const ToDoJSX = allChecks((checked, indeks) => {
+    return <ToDo key={indeks} checked={checked}/>
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {ToDoJSX}
+    </>
   );
 }
 
