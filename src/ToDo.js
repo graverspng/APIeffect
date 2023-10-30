@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function ToDo(props) {
-    const [checkbox, setcheckbox] = useState(props.check)
+    const [checkbox, setcheckbox] = useState(props.completed)
 
     function handleChange(event) {
         setcheckbox(event.target.value);
@@ -9,7 +9,10 @@ function ToDo(props) {
 
     return (
         <>
-        <input type="checkbox" check={checkbox} onChange={handleChange} />
+        <p>UserID: {props.userID}</p>
+        <p>id: {props.id}</p>
+        <p>{props.title}</p>
+        <input type="checkbox" check={checkbox} onChange={handleChange}></input>
         </>
     );
   }

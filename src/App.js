@@ -11,13 +11,9 @@ function App() {
   };
 
 
-  const ToDoJSX = allChecks((checked, indeks) => {
-    return <ToDo key={indeks} checked={checked}/>
-  });
-
   return (
     <>
-    {ToDoJSX}
+    <ToDo {...allChecks}/>
     </>
   );
 }
